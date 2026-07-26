@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Graduation cap protected">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#191428"/>
+      <stop offset="1" stop-color="#4C1D95"/>
+    </linearGradient>
+    <linearGradient id="a" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#14B8A6"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" fill="url(#g)"/>
+  <g opacity="0.10" fill="#F5F0E8">
+    <circle cx="90" cy="70" r="46"/>
+    <circle cx="570" cy="360" r="70"/>
+    <circle cx="540" cy="80" r="26"/>
+  </g>
+  <g transform="translate(320,210)">
+
+    <g stroke="url(#a)" stroke-width="10" stroke-linejoin="round" fill="none">
+      <path d="M0 -95 l150 55 -150 55 -150 -55z"/>
+      <path d="M-85 -8 v65 q85 55 170 0 v-65"/>
+      <line x1="150" y1="-40" x2="150" y2="40"/>
+    </g>
+    <circle cx="150" cy="52" r="11" fill="#14B8A6"/>
+    <path d="M0 25 l40 16 v30 c0 26 -18 41 -40 49 c-22 -8 -40 -23 -40 -49 v-30z" fill="#191428" stroke="#7C3AED" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M-14 68 l11 11 20 -24" fill="none" stroke="#F5F0E8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <rect x="0" y="412" width="640" height="8" fill="url(#a)"/>
+</svg>

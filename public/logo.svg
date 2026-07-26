@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 80" role="img" aria-label="Times Up">
+  <defs>
+    <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#0D9488"/>
+    </linearGradient>
+  </defs>
+  <!-- Hourglass mark -->
+  <g transform="translate(6,10)">
+    <path d="M8 0h44v8l-16 18v8l16 18v8H8v-8l16-18v-8L8 8z" fill="none" stroke="url(#lg)" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M18 10h24l-12 13z" fill="#0D9488"/>
+    <path d="M30 42l12 12H18z" fill="#7C3AED"/>
+  </g>
+  <text x="76" y="42" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="800" letter-spacing="2" fill="#F5F0E8">TIME&#8217;S UP</text>
+  <text x="78" y="64" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" letter-spacing="5" fill="#0D9488">JUSTICE FOR SURVIVORS</text>
+</svg>

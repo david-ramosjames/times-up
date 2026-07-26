@@ -1,0 +1,68 @@
+import Image from "next/image";
+import { IMAGES } from "@/lib/images";
+
+type Badge = {
+  name: string;
+  image: string;
+  href?: string;
+};
+
+const badges: Badge[] = [
+  {
+    name: "The National Top 100 Trial Lawyers",
+    href: "https://thenationaltriallawyers.org/members/laura-ramos-james/",
+    image: IMAGES.badges.nationalTop100,
+  },
+  {
+    name: "Multi-Million Dollar Advocates Forum",
+    href: "https://www.milliondollaradvocates.com/",
+    image: IMAGES.badges.multiMillionDollar,
+  },
+  {
+    name: "Ramos James Law",
+    image: IMAGES.badges.ramosJames,
+  },
+];
+
+export default function TrustBadges() {
+  return (
+    <section className="border-t border-gray-200 bg-gray-50 py-14">
+      <div className="mx-auto max-w-5xl px-4 text-center">
+        <h2 className="text-sm font-bold uppercase tracking-widest text-gray-400">
+          Recognized &amp; Trusted
+        </h2>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-10 md:gap-16">
+          {badges.map((b) => {
+            const inner = (
+              <Image
+                src={b.image}
+                alt={b.name}
+                fill
+                className="object-contain"
+                sizes="150px"
+              />
+            );
+            const className =
+              "relative block h-[150px] w-[150px] shrink-0";
+            return b.href ? (
+              <a
+                key={b.name}
+                href={b.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${className} transition-opacity hover:opacity-80`}
+                aria-label={b.name}
+              >
+                {inner}
+              </a>
+            ) : (
+              <div key={b.name} className={className} aria-label={b.name}>
+                {inner}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Heart held in caring hands">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#191428"/>
+      <stop offset="1" stop-color="#4C1D95"/>
+    </linearGradient>
+    <linearGradient id="a" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#14B8A6"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" fill="url(#g)"/>
+  <g opacity="0.10" fill="#F5F0E8">
+    <circle cx="90" cy="70" r="46"/>
+    <circle cx="570" cy="360" r="70"/>
+    <circle cx="540" cy="80" r="26"/>
+  </g>
+  <g transform="translate(320,210)">
+
+    <path d="M0 60 C-90 -10 -60 -95 0 -55 C60 -95 90 -10 0 60z" fill="none" stroke="url(#a)" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M-95 85 q95 60 190 0 q-26 52 -95 52 q-69 0 -95 -52z" fill="#F5F0E8" opacity="0.92"/>
+  </g>
+  <rect x="0" y="412" width="640" height="8" fill="url(#a)"/>
+</svg>

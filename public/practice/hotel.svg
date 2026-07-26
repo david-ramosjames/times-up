@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Hotel building with room key">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#191428"/>
+      <stop offset="1" stop-color="#312E81"/>
+    </linearGradient>
+    <linearGradient id="a" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#14B8A6"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" fill="url(#g)"/>
+  <g opacity="0.10" fill="#F5F0E8">
+    <circle cx="90" cy="70" r="46"/>
+    <circle cx="570" cy="360" r="70"/>
+    <circle cx="540" cy="80" r="26"/>
+  </g>
+  <g transform="translate(320,210)">
+
+    <g stroke="url(#a)" stroke-width="10" stroke-linejoin="round" fill="none">
+      <rect x="-110" y="-120" width="160" height="230" rx="8"/>
+      <path d="M50 -40 h70 v150 h-70"/>
+    </g>
+    <g fill="#14B8A6">
+      <rect x="-85" y="-95" width="24" height="24" rx="4"/>
+      <rect x="-40" y="-95" width="24" height="24" rx="4"/>
+      <rect x="-85" y="-50" width="24" height="24" rx="4"/>
+      <rect x="-40" y="-50" width="24" height="24" rx="4"/>
+      <rect x="-85" y="-5" width="24" height="24" rx="4"/>
+      <rect x="-40" y="-5" width="24" height="24" rx="4"/>
+      <rect x="70" y="-15" width="22" height="22" rx="4"/>
+      <rect x="70" y="25" width="22" height="22" rx="4"/>
+    </g>
+    <rect x="-48" y="55" width="36" height="55" fill="#7C3AED"/>
+  </g>
+  <rect x="0" y="412" width="640" height="8" fill="url(#a)"/>
+</svg>

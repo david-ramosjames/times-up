@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary dark — deep ink plum */
+  --color-brand-navy: #191428;
+  --color-brand-navy-dark: #100D1C;
+  /* Secondary dark surface */
+  --color-brand-charcoal: #221C33;
+  /* Warm Ivory — calm, empathetic */
+  --color-brand-cream: #F5F0E8;
+  /* Primary CTA violet */
+  --color-brand-red: #6D28D9;
+  --color-brand-red-light: #7C3AED;
+  /* Dark violet / secondary CTA */
+  --color-brand-red-dark: #4C1D95;
+  /* Teal accents — sexual assault awareness teal */
+  --color-brand-coral: #0D9488;
+  --color-brand-coral-light: #14B8A6;
+  --color-brand-rose: #0D9488;
+  --color-brand-rose-dark: #0F766E;
+  /* Muted slate for supporting text */
+  --color-brand-steel: #5C6B73;
+  /* Legacy gold alias */
+  --color-brand-gold: #6D28D9;
+  --color-brand-gold-light: #7C3AED;
+  /* Trust/accent gold for stars and stat icons */
+  --color-brand-accent-gold: #FBBF24;
+  --font-heading: 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle pulse halo for phone/call buttons */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulse-halo {
+  0% {
+    box-shadow: 0 0 0 0 rgba(109, 40, 217, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(109, 40, 217, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(109, 40, 217, 0);
+  }
+}
+
+.pulse-halo {
+  animation: pulse-halo 3s ease-in-out infinite;
+}
+
+@keyframes pulse-halo-coral {
+  0% {
+    box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(13, 148, 136, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(13, 148, 136, 0);
+  }
+}
+
+.pulse-halo-coral {
+  animation: pulse-halo-coral 3s ease-in-out infinite;
+}
+
+/* Button hover lift */
+.btn-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Teal glow for primary CTA */
+.btn-glow-coral {
+  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.4);
+}
+.btn-glow-coral:hover {
+  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.55);
+}
+
+/* Violet glow for call CTA */
+.btn-glow-rose {
+  box-shadow: 0 4px 14px rgba(109, 40, 217, 0.35);
+}
+.btn-glow-rose:hover {
+  box-shadow: 0 6px 20px rgba(109, 40, 217, 0.5);
+}
+
+/* Chat launcher halo */
+.chat-launcher-shadow {
+  box-shadow: 0 10px 30px rgba(109, 40, 217, 0.35);
+}
+.chat-launcher-shadow:hover {
+  box-shadow: 0 12px 36px rgba(109, 40, 217, 0.5);
+}
+
+/* Card hover lift effect */
+.card-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.12), 0 4px 8px -2px rgba(0, 0, 0, 0.08);
+}
+
+/* Gradient top border for cards */
+.card-border-top {
+  position: relative;
+  overflow: hidden;
+}
+.card-border-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #6D28D9, #0D9488);
+}
+
+/* Left accent border */
+.card-border-left {
+  border-left: 4px solid #0D9488;
+}
+
+/* Fade-up on scroll (scroll-driven; degrades to visible where unsupported) */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal-up {
+      opacity: 0;
+      animation: reveal-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+  }
+}
