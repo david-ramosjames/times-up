@@ -7,14 +7,14 @@ import JsonLd from "@/components/JsonLd";
 import { localBusinessSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Estimación de Caso Gratis con IA",
+  title: "Revisión de Caso Gratuita y Confidencial",
   description:
-    "Obtén una estimación gratuita e instantánea con IA para tu caso de accidente de camión en Texas. Responde unas preguntas y recibe una evaluación preliminar.",
+    "Responda unas preguntas privadas y reciba una revisión preliminar, gratuita y confidencial de su caso de agresión o abuso sexual en Texas.",
   alternates: {
-    canonical: `${SITE_URL}/es/estimacion-de-caso`,
+    canonical: `${SITE_URL}/es/revision-de-caso`,
     languages: {
-      en: `${SITE_URL}/case-estimate`,
-      es: `${SITE_URL}/es/estimacion-de-caso`,
+      en: `${SITE_URL}/case-review`,
+      es: `${SITE_URL}/es/revision-de-caso`,
     },
   },
 };
@@ -29,10 +29,11 @@ export default function CaseEstimatePageES() {
       <JsonLd
         data={breadcrumbSchema([
           { name: "Inicio", url: "/es" },
-          { name: d.title, url: "/es/estimacion-de-caso" },
+          { name: d.title, url: "/es/revision-de-caso" },
         ])}
       />
 
+      {/* Hero */}
       <section className="bg-brand-navy py-16 text-white">
         <div className="mx-auto max-w-3xl px-4 text-center">
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-coral/20">
@@ -45,6 +46,7 @@ export default function CaseEstimatePageES() {
         </div>
       </section>
 
+      {/* Formulario */}
       <section className="py-16">
         <div className="mx-auto max-w-2xl px-4">
           <CaseEstimateForm dict={dict} locale="es" />

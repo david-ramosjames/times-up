@@ -8,25 +8,25 @@ import JsonLd from "@/components/JsonLd";
 import { localBusinessSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Ayuda con Accidentes de Camión: Abogado en Texas",
+  title: "Centro de Ayuda para Sobrevivientes: Abogadas en Texas",
   description:
-    "Respuestas sobre accidentes de camión para víctimas en Texas. Aprenda sus derechos y qué hacer después de un choque con un 18 ruedas.",
+    "Respuestas honestas para sobrevivientes de agresión y abuso sexual en Texas. Conozca sus derechos civiles, plazos y opciones — confidencialmente. Consulta gratis.",
   alternates: {
-    canonical: `${SITE_URL}/es/ayuda-accidente-camion`,
+    canonical: `${SITE_URL}/es/ayuda-agresion-sexual`,
     languages: {
-      en: `${SITE_URL}/truck-accident-help`,
-      es: `${SITE_URL}/es/ayuda-accidente-camion`,
+      en: `${SITE_URL}/sexual-assault-help`,
+      es: `${SITE_URL}/es/ayuda-agresion-sexual`,
     },
   },
   openGraph: {
-    title: "Ayuda con Accidentes de Camión: Abogado en Texas",
+    title: "Centro de Ayuda para Sobrevivientes: Abogadas en Texas",
     description:
-      "Respuestas sobre accidentes de camión para víctimas en Texas. Aprenda sus derechos y qué hacer después de un choque con un 18 ruedas.",
-    url: `${SITE_URL}/es/ayuda-accidente-camion`,
+      "Respuestas honestas para sobrevivientes de agresión y abuso sexual en Texas. Conozca sus derechos civiles, plazos y opciones — confidencialmente.",
+    url: `${SITE_URL}/es/ayuda-agresion-sexual`,
   },
 };
 
-export default function HelpHubPageES() {
+export default function SurvivorHelpPageES() {
   const dict = getDictionary("es");
   const d = dict.helpHub;
   const routes = ROUTES.es;
@@ -37,7 +37,7 @@ export default function HelpHubPageES() {
       <JsonLd
         data={breadcrumbSchema([
           { name: "Inicio", url: "/es" },
-          { name: "Ayuda con Accidentes de Camión", url: "/es/ayuda-accidente-camion" },
+          { name: "Ayuda para Sobrevivientes", url: "/es/ayuda-agresion-sexual" },
         ])}
       />
       <JsonLd
@@ -46,6 +46,7 @@ export default function HelpHubPageES() {
         )}
       />
 
+      {/* Hero */}
       <HeroSection
         dict={dict}
         locale="es"
@@ -53,6 +54,7 @@ export default function HelpHubPageES() {
         subhead={d.heroSubhead}
       />
 
+      {/* Respuesta directa */}
       <section className="bg-brand-cream py-14">
         <div className="mx-auto max-w-3xl px-4">
           <div className="rounded-xl border border-brand-coral/20 bg-white p-8 shadow-sm">
@@ -73,6 +75,7 @@ export default function HelpHubPageES() {
         </div>
       </section>
 
+      {/* Qué hace diferentes a estos casos */}
       <section className="py-16">
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-center text-3xl font-bold text-brand-navy md:text-4xl">
@@ -99,6 +102,7 @@ export default function HelpHubPageES() {
         </div>
       </section>
 
+      {/* CTA */}
       <section className="bg-brand-navy py-14 text-white">
         <div className="mx-auto max-w-3xl px-4 text-center">
           <h2 className="text-2xl font-bold md:text-3xl">{dict.cta.heading}</h2>
@@ -111,7 +115,7 @@ export default function HelpHubPageES() {
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              <span className="lg:hidden">Llamar Ahora — Consulta Gratis</span><span className="hidden lg:inline">{dict.cta.callNow}: {PHONE_DISPLAY}</span>
+              <span className="lg:hidden">Llamar Ahora — Confidencial</span><span className="hidden lg:inline">{dict.cta.callNow}: {PHONE_DISPLAY}</span>
             </a>
             <Link
               href={routes.contact}
@@ -124,6 +128,7 @@ export default function HelpHubPageES() {
         </div>
       </section>
 
+      {/* Preguntas comunes: enlaces del centro de ayuda */}
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4">
           <h2 className="text-center text-3xl font-bold text-brand-navy md:text-4xl">
@@ -148,7 +153,7 @@ export default function HelpHubPageES() {
                   href={routes[q.slug as keyof typeof routes]}
                   className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-coral transition-colors hover:text-brand-rose"
                 >
-                  Leer respuesta completa
+                  Leer la respuesta completa
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -159,6 +164,7 @@ export default function HelpHubPageES() {
         </div>
       </section>
 
+      {/* Sección específica de Texas */}
       <section className="bg-gray-50 py-16">
         <div className="mx-auto max-w-4xl px-4">
           <h2 className="text-3xl font-bold text-brand-navy">{d.texasTitle}</h2>
@@ -176,32 +182,34 @@ export default function HelpHubPageES() {
         </div>
       </section>
 
+      {/* Enlaces internos */}
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4">
           <h2 className="text-3xl font-bold text-brand-navy">{d.relatedTitle}</h2>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <Link href={routes.truckAccident} className="rounded-lg border border-gray-200 bg-white px-5 py-4 font-medium text-brand-navy transition-colors hover:border-brand-coral hover:text-brand-coral">
-              {dict.nav.truckAccident}
+            <Link href={routes.sexualAssault} className="rounded-lg border border-gray-200 bg-white px-5 py-4 font-medium text-brand-navy transition-colors hover:border-brand-coral hover:text-brand-coral">
+              Abogada de Agresión Sexual
             </Link>
-            <Link href={routes.eighteenWheeler} className="rounded-lg border border-gray-200 bg-white px-5 py-4 font-medium text-brand-navy transition-colors hover:border-brand-coral hover:text-brand-coral">
-              {dict.nav.eighteenWheeler}
+            <Link href={routes.sexualAbuse} className="rounded-lg border border-gray-200 bg-white px-5 py-4 font-medium text-brand-navy transition-colors hover:border-brand-coral hover:text-brand-coral">
+              Abogada de Abuso Sexual
             </Link>
-            <Link href={routes.deliveryTruck} className="rounded-lg border border-gray-200 bg-white px-5 py-4 font-medium text-brand-navy transition-colors hover:border-brand-coral hover:text-brand-coral">
-              Accidentes de FedEx y UPS
+            <Link href={routes.rideshare} className="rounded-lg border border-gray-200 bg-white px-5 py-4 font-medium text-brand-navy transition-colors hover:border-brand-coral hover:text-brand-coral">
+              Agresión en Uber y Lyft
             </Link>
-            <Link href={routes.oilfieldTanker} className="rounded-lg border border-gray-200 bg-white px-5 py-4 font-medium text-brand-navy transition-colors hover:border-brand-coral hover:text-brand-coral">
-              Accidentes de Petroleros y Cisternas
+            <Link href={routes.hotelAssault} className="rounded-lg border border-gray-200 bg-white px-5 py-4 font-medium text-brand-navy transition-colors hover:border-brand-coral hover:text-brand-coral">
+              Hoteles y Seguridad Negligente
             </Link>
             <Link href={routes.areas} className="rounded-lg border border-gray-200 bg-white px-5 py-4 font-medium text-brand-navy transition-colors hover:border-brand-coral hover:text-brand-coral">
-              {dict.nav.areas}
+              Áreas que Servimos
             </Link>
             <Link href={routes.faq} className="rounded-lg border border-gray-200 bg-white px-5 py-4 font-medium text-brand-navy transition-colors hover:border-brand-coral hover:text-brand-coral">
-              {dict.nav.faq}
+              Preguntas Frecuentes
             </Link>
           </div>
         </div>
       </section>
 
+      {/* CTA final */}
       <section className="bg-brand-navy py-16 text-white">
         <div className="mx-auto max-w-3xl px-4 text-center">
           <h2 className="text-3xl font-bold md:text-4xl">{d.finalCtaHeading}</h2>
@@ -214,7 +222,7 @@ export default function HelpHubPageES() {
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              <span className="lg:hidden">Llamar Ahora — Consulta Gratis</span><span className="hidden lg:inline">{dict.cta.callNow}: {PHONE_DISPLAY}</span>
+              <span className="lg:hidden">Llamar Ahora — Confidencial</span><span className="hidden lg:inline">Llamar Ahora: {PHONE_DISPLAY}</span>
             </a>
           </div>
           <p className="mt-4 text-sm text-gray-400">{dict.cta.microcopy}</p>

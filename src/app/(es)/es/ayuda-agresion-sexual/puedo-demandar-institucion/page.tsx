@@ -7,18 +7,19 @@ import JsonLd from "@/components/JsonLd";
 import { localBusinessSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "¿Puedo Demandar a una Compañía de Camiones por Mis Lesiones?",
-  description: "Aprenda cómo y por qué demandar a una compañía de camiones después de un accidente en Texas. Sin honorarios si no ganamos. Consulta gratis con Trucking Chicas.",
+  title: "¿Puedo Demandar a una Institución: Hotel, Empleador o Escuela?",
+  description:
+    "Sí. Hoteles, empleadores, escuelas y plataformas pueden ser responsables cuando su negligencia facilitó la agresión. Conozca sus opciones. Consulta confidencial.",
   alternates: {
-    canonical: `${SITE_URL}/es/ayuda-accidente-camion/demandar-compania-camiones`,
+    canonical: `${SITE_URL}/es/ayuda-agresion-sexual/puedo-demandar-institucion`,
     languages: {
-      en: `${SITE_URL}/truck-accident-help/can-i-sue-trucking-company`,
-      es: `${SITE_URL}/es/ayuda-accidente-camion/demandar-compania-camiones`,
+      en: `${SITE_URL}/sexual-assault-help/can-i-sue-an-institution`,
+      es: `${SITE_URL}/es/ayuda-agresion-sexual/puedo-demandar-institucion`,
     },
   },
 };
 
-export default function DemandarCompaniaCamionesES() {
+export default function QAPageES() {
   const dict = getDictionary("es");
   const d = dict.helpHub;
   const q = d.questions[3];
@@ -27,14 +28,14 @@ export default function DemandarCompaniaCamionesES() {
   return (
     <PageShell dict={dict} locale="es">
       <JsonLd data={localBusinessSchema("es")} />
-      <JsonLd data={breadcrumbSchema([{ name: "Inicio", url: "/es" }, { name: "Ayuda con Accidentes de Camión", url: "/es/ayuda-accidente-camion" }, { name: q.fullTitle, url: `/es/ayuda-accidente-camion/demandar-compania-camiones` }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Inicio", url: "/es" }, { name: "Ayuda para Sobrevivientes", url: "/es/ayuda-agresion-sexual" }, { name: q.fullTitle, url: `/es/ayuda-agresion-sexual/puedo-demandar-institucion` }])} />
 
       <section className="bg-brand-navy py-16 text-white">
         <div className="mx-auto max-w-3xl px-4">
           <nav className="mb-6 text-sm text-gray-400">
             <Link href="/es" className="hover:text-white">Inicio</Link>
             <span className="mx-2">/</span>
-            <Link href="/es/ayuda-accidente-camion" className="hover:text-white">Ayuda con Accidentes de Camión</Link>
+            <Link href="/es/ayuda-agresion-sexual" className="hover:text-white">Ayuda para Sobrevivientes</Link>
             <span className="mx-2">/</span>
             <span className="text-white">{q.fullTitle}</span>
           </nav>
@@ -56,15 +57,15 @@ export default function DemandarCompaniaCamionesES() {
           </div>
 
           <div className="mt-12 rounded-xl bg-brand-navy p-8 text-center text-white">
-            <h2 className="text-2xl font-bold">¿Necesita Ayuda con Su Caso?</h2>
-            <p className="mt-2 text-gray-300">Obtenga una consulta gratuita y sin compromiso de nuestros abogados de accidentes de camión.</p>
+            <h2 className="text-2xl font-bold">¿Lista para Hablar? Aquí Estamos.</h2>
+            <p className="mt-2 text-gray-300">Obtenga una consulta gratuita, confidencial y sin compromiso con nuestro equipo.</p>
             <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <a href={`tel:+1${PHONE_NUMBER}`} className="btn-lift inline-flex items-center gap-2 rounded-xl bg-brand-red px-8 py-4 text-lg font-bold shadow-lg transition-colors hover:bg-brand-red-light">
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                Llame Ahora: {PHONE_DISPLAY}
+                <span className="lg:hidden">Llamar Ahora — Confidencial</span><span className="hidden lg:inline">Llamar Ahora: {PHONE_DISPLAY}</span>
               </a>
               <Link href={routes.contact} className="btn-lift rounded-xl bg-brand-coral px-8 py-4 text-lg font-bold shadow-lg transition-colors hover:bg-brand-coral-light">
-                Evaluación Gratis
+                Revisión Confidencial de Caso
               </Link>
             </div>
             <p className="mt-4 text-sm text-gray-400">{dict.cta.microcopy}</p>
@@ -80,7 +81,7 @@ export default function DemandarCompaniaCamionesES() {
               ))}
             </div>
             <div className="mt-6">
-              <Link href="/es/ayuda-accidente-camion" className="inline-flex items-center gap-1 font-medium text-brand-coral hover:text-brand-rose">
+              <Link href="/es/ayuda-agresion-sexual" className="inline-flex items-center gap-1 font-medium text-brand-coral hover:text-brand-rose">
                 <svg className="h-4 w-4 rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                 Volver a todas las preguntas
               </Link>

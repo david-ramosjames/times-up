@@ -11,27 +11,33 @@ import { localBusinessSchema, breadcrumbSchema } from "@/lib/schema";
 import { IMAGES } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Abogado de Accidentes de Camiones de Volteo en Texas",
+  title: "Abogada de Agresión Sexual en el Trabajo en Texas",
   description:
-    "¿Lesionado por un camión de volteo o vehículo de construcción en Texas? Nuestros abogados luchan por las víctimas. Evaluación gratis.",
+    "¿Fue agredida o acosada sexualmente en su trabajo en Texas? Nuestro bufete liderado por mujeres exige cuentas a los empleadores. Revisión de caso confidencial.",
   alternates: {
-    canonical: `${SITE_URL}/es/abogado-accidentes-camion-volteo`,
+    canonical: `${SITE_URL}/es/abogada-agresion-sexual-trabajo`,
     languages: {
-      en: `${SITE_URL}/dump-truck-construction-accident-lawyer`,
-      es: `${SITE_URL}/es/abogado-accidentes-camion-volteo`,
+      en: `${SITE_URL}/workplace-sexual-assault-lawyer`,
+      es: `${SITE_URL}/es/abogada-agresion-sexual-trabajo`,
     },
+  },
+  openGraph: {
+    title: "Abogada de Agresión Sexual en el Trabajo en Texas",
+    description:
+      "¿Fue agredida o acosada sexualmente en su trabajo en Texas? Nuestro bufete liderado por mujeres exige cuentas a los empleadores. Revisión de caso confidencial.",
+    url: `${SITE_URL}/es/abogada-agresion-sexual-trabajo`,
   },
 };
 
-export default function DumpTruckPageES() {
+export default function WorkplaceAssaultPageES() {
   const dict = getDictionary("es");
-  const d = dict.dumpTruck;
+  const d = dict.workplaceAssault;
   const routes = ROUTES.es;
 
   return (
     <PageShell dict={dict} locale="es">
       <JsonLd data={localBusinessSchema("es")} />
-      <JsonLd data={breadcrumbSchema([{ name: "Inicio", url: "/es" }, { name: d.title, url: "/es/abogado-accidentes-camion-volteo" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Inicio", url: "/es" }, { name: d.title, url: "/es/abogada-agresion-sexual-trabajo" }])} />
 
       <HeroSection dict={dict} locale="es" headline={d.heroHeadline} subhead={d.heroSubhead} />
 
@@ -40,8 +46,8 @@ export default function DumpTruckPageES() {
           <h2 className="text-3xl font-bold text-brand-navy">{d.introTitle}</h2>
           <div className="mt-6 overflow-hidden rounded-xl">
             <Image
-              src={IMAGES.trucks.dumpTruck}
-              alt="Camión de volteo"
+              src={IMAGES.practice.workplace}
+              alt="Maletín con escudo protector: seguridad en el trabajo"
               width={800}
               height={450}
               className="h-auto w-full rounded-xl"
@@ -57,12 +63,12 @@ export default function DumpTruckPageES() {
         <div className="mx-auto max-w-3xl px-4">
           <h2 className="text-3xl font-bold text-brand-navy">{d.causesTitle}</h2>
           <ul className="mt-6 space-y-3">
-            {d.causes.map((cause) => (
-              <li key={cause} className="flex items-start gap-3">
+            {d.causes.map((item) => (
+              <li key={item} className="flex items-start gap-3">
                 <svg className="mt-1 h-5 w-5 shrink-0 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 10-2 0 1 1 0 002 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                 </svg>
-                <span className="text-gray-700">{cause}</span>
+                <span className="text-gray-700">{item}</span>
               </li>
             ))}
           </ul>
@@ -89,24 +95,25 @@ export default function DumpTruckPageES() {
         <div className="mx-auto max-w-3xl px-4">
           <h2 className="text-3xl font-bold text-brand-navy">{d.injuriesTitle}</h2>
           <ul className="mt-6 space-y-3">
-            {d.injuries.map((injury) => (
-              <li key={injury} className="flex items-start gap-3">
+            {d.injuries.map((item) => (
+              <li key={item} className="flex items-start gap-3">
                 <svg className="mt-1 h-5 w-5 shrink-0 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 10-2 0 1 1 0 002 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                 </svg>
-                <span className="text-gray-700">{injury}</span>
+                <span className="text-gray-700">{item}</span>
               </li>
             ))}
           </ul>
         </div>
       </section>
 
+      {/* Enlaces internos */}
       <section className="py-10">
         <div className="mx-auto max-w-3xl px-4">
           <h2 className="text-xl font-bold text-brand-navy">Páginas Relacionadas</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href={routes.truckAccident} className="text-brand-red underline hover:text-brand-red-dark">Abogado de Accidentes de Camión</Link>
-            <Link href={routes.oilfieldTanker} className="text-brand-red underline hover:text-brand-red-dark">Camiones Cisterna y Petroleros</Link>
+            <Link href={routes.sexualAssault} className="text-brand-red underline hover:text-brand-red-dark">Abogada de Agresión Sexual</Link>
+            <Link href={routes.hotelAssault} className="text-brand-red underline hover:text-brand-red-dark">Abogada de Agresión en Hoteles y Seguridad Negligente</Link>
             <Link href={routes.faq} className="text-brand-red underline hover:text-brand-red-dark">Preguntas Frecuentes</Link>
           </div>
         </div>

@@ -9,9 +9,9 @@ import JsonLd from "@/components/JsonLd";
 import { faqSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Preguntas Frecuentes sobre Accidentes de Camión",
+  title: "Preguntas de Sobrevivientes: Reclamos Civiles en Texas",
   description:
-    "Obtén respuestas a preguntas comunes sobre reclamaciones por accidentes de camión en Texas, incluyendo responsabilidad, compensación y el plazo de prescripción.",
+    "Respuestas a preguntas comunes sobre reclamos civiles por agresión y abuso sexual en Texas, incluyendo confidencialidad, plazos y compensación.",
   alternates: {
     canonical: `${SITE_URL}/es/preguntas-frecuentes`,
     languages: {
@@ -29,7 +29,12 @@ export default function FAQPageES() {
   return (
     <PageShell dict={dict} locale="es">
       <JsonLd data={faqSchema(d.items)} />
-      <JsonLd data={breadcrumbSchema([{ name: "Inicio", url: "/es" }, { name: d.title, url: "/es/preguntas-frecuentes" }])} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Inicio", url: "/es" },
+          { name: d.title, url: "/es/preguntas-frecuentes" },
+        ])}
+      />
 
       <section className="bg-brand-navy py-16 text-white">
         <div className="mx-auto max-w-3xl px-4 text-center">
@@ -44,6 +49,7 @@ export default function FAQPageES() {
         </div>
       </section>
 
+      {/* Cómo elegir una abogada */}
       <section className="bg-gray-50 py-16">
         <div className="mx-auto max-w-3xl px-4">
           <h2 className="text-3xl font-bold text-brand-navy">{d.chooseTitle}</h2>
@@ -51,7 +57,11 @@ export default function FAQPageES() {
             {d.chooseItems.map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <svg className="mt-1 h-5 w-5 shrink-0 text-brand-coral" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  <path
+                    fillRule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 <span className="text-gray-700">{item}</span>
               </li>
@@ -60,13 +70,20 @@ export default function FAQPageES() {
         </div>
       </section>
 
+      {/* Enlaces internos */}
       <section className="py-10">
         <div className="mx-auto max-w-3xl px-4">
-          <h2 className="text-xl font-bold text-brand-navy">Más Información</h2>
+          <h2 className="text-xl font-bold text-brand-navy">Conozca Más</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href={routes.truckAccident} className="text-brand-rose underline hover:text-brand-rose-dark">{dict.nav.truckAccident}</Link>
-            <Link href={routes.eighteenWheeler} className="text-brand-rose underline hover:text-brand-rose-dark">{dict.nav.eighteenWheeler}</Link>
-            <Link href={routes.areas} className="text-brand-rose underline hover:text-brand-rose-dark">{dict.nav.areas}</Link>
+            <Link href={routes.sexualAssault} className="text-brand-rose underline hover:text-brand-rose-dark">
+              Abogada de Agresión Sexual
+            </Link>
+            <Link href={routes.sexualAbuse} className="text-brand-rose underline hover:text-brand-rose-dark">
+              Abogada de Abuso Sexual
+            </Link>
+            <Link href={routes.areas} className="text-brand-rose underline hover:text-brand-rose-dark">
+              Áreas que Servimos
+            </Link>
           </div>
         </div>
       </section>

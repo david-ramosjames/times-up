@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getDictionary } from "@/dictionaries";
-import { SITE_URL, TEXAS_CITIES, PHONE_NUMBER, PHONE_DISPLAY, ROUTES } from "@/lib/constants";
+import { SITE_URL, TEXAS_CITIES, PHONE_NUMBER, PHONE_DISPLAY, ROUTES, type CityRouteKey } from "@/lib/constants";
 import PageShell from "@/components/PageShell";
 import HeroSection from "@/components/HeroSection";
 import CitySection from "@/components/CitySection";
@@ -11,9 +11,9 @@ import JsonLd from "@/components/JsonLd";
 import { localBusinessSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Áreas que Servimos: Abogado de Accidentes de Camión en Texas",
+  title: "Áreas que Servimos: Abogadas de Agresión Sexual en Texas",
   description:
-    "Trucking Chicas sirve a víctimas de accidentes de camión y tráiler en todo Texas, incluyendo Houston, Dallas, Austin, San Antonio y más.",
+    "Times Up representa a sobrevivientes de agresión y abuso sexual en todo Texas, incluyendo Houston, Dallas, Austin, San Antonio y más.",
   alternates: {
     canonical: `${SITE_URL}/es/areas-que-servimos`,
     languages: {
@@ -28,24 +28,42 @@ export default function AreasPageES() {
   const d = dict.areas;
   const routes = ROUTES.es;
 
+  const cityRouteMap: Record<string, CityRouteKey> = {
+    Houston: "houston",
+    Dallas: "dallas",
+    Austin: "austin",
+    "San Antonio": "sanAntonio",
+    "Fort Worth": "fortWorth",
+    "El Paso": "elPaso",
+    Arlington: "arlington",
+    "Corpus Christi": "corpusChristi",
+    Plano: "plano",
+    Lubbock: "lubbock",
+  };
+
   return (
     <PageShell dict={dict} locale="es">
       <JsonLd data={localBusinessSchema("es")} />
-      <JsonLd data={breadcrumbSchema([{ name: "Inicio", url: "/es" }, { name: d.title, url: "/es/areas-que-servimos" }])} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Inicio", url: "/es" },
+          { name: d.title, url: "/es/areas-que-servimos" },
+        ])}
+      />
 
       <HeroSection dict={dict} locale="es" headline={d.heading} subhead={d.subhead} />
 
-      {/* Texas Map */}
+      {/* Mapa de Texas */}
       <section className="bg-white py-12">
         <div className="mx-auto max-w-4xl px-4 text-center">
           <TexasMap locale="es" />
           <p className="mt-4 text-sm text-brand-steel">
-            Representamos a víctimas de accidentes de camión en cada ciudad resaltada y en todo Texas.
+            Representamos a sobrevivientes en cada ciudad destacada y en todo Texas.
           </p>
         </div>
       </section>
 
-      {/* Statistics */}
+      {/* Estadísticas */}
       <section className="bg-brand-cream py-14">
         <div className="mx-auto max-w-4xl px-4">
           <h2 className="text-3xl font-bold text-brand-navy">{d.statsTitle}</h2>
@@ -62,7 +80,7 @@ export default function AreasPageES() {
         </div>
       </section>
 
-      {/* Major Trucking Routes */}
+      {/* Dónde aparece la negligencia institucional */}
       <section className="py-14">
         <div className="mx-auto max-w-4xl px-4">
           <h2 className="text-3xl font-bold text-brand-navy">{d.routesTitle}</h2>
@@ -78,7 +96,7 @@ export default function AreasPageES() {
         </div>
       </section>
 
-      {/* City Cards */}
+      {/* Tarjetas de ciudades */}
       <section className="bg-gray-50 py-14">
         <div className="mx-auto max-w-6xl px-4">
           <div className="grid gap-6 md:grid-cols-2">
@@ -89,13 +107,14 @@ export default function AreasPageES() {
                 data={d.cities[city]}
                 dict={dict}
                 locale="es"
+                routeKey={cityRouteMap[city]}
               />
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* Preguntas frecuentes */}
       <section className="py-14">
         <div className="mx-auto max-w-3xl px-4">
           <h2 className="text-3xl font-bold text-brand-navy">{d.faqTitle}</h2>
@@ -105,7 +124,7 @@ export default function AreasPageES() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
+      {/* CTA final */}
       <section className="bg-brand-navy py-16 text-white">
         <div className="mx-auto max-w-3xl px-4 text-center">
           <h2 className="text-3xl font-bold md:text-4xl">{d.bottomCtaHeading}</h2>
@@ -121,7 +140,7 @@ export default function AreasPageES() {
               href={`tel:+1${PHONE_NUMBER}`}
               className="pulse-halo w-full rounded-lg bg-brand-rose px-8 py-4 text-lg font-bold text-white transition-colors hover:bg-brand-rose-dark sm:w-auto"
             >
-              <span className="lg:hidden">Llamar Ahora — Consulta Gratis</span><span className="hidden lg:inline">{dict.cta.callNow}: {PHONE_DISPLAY}</span>
+              <span className="lg:hidden">Llamar Ahora — Confidencial</span><span className="hidden lg:inline">{dict.cta.callNow}: {PHONE_DISPLAY}</span>
             </a>
           </div>
           <p className="mt-4 text-sm text-gray-400">{dict.cta.microcopy}</p>

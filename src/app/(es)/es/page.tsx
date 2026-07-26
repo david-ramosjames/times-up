@@ -15,31 +15,31 @@ import { localBusinessSchema, faqSchema } from "@/lib/schema";
 import { IMAGES } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Abogados de Accidentes de Camión en Texas",
+  title: { absolute: "Times Up - Abogadas de Agresión Sexual en Texas para Sobrevivientes" },
   description:
-    "¿Te chocó un camión en Texas? Trucking Chicas lucha por las víctimas de accidentes de camión y tráiler. Evaluación gratis. No cobramos si no ganamos.",
+    "¿Sobrevivió una agresión o abuso sexual en Texas? Times Up es un bufete liderado por mujeres que lucha por las sobrevivientes. Revisión de caso gratis y confidencial. No cobramos si no ganamos.",
   alternates: {
     canonical: `${SITE_URL}/es`,
     languages: { en: SITE_URL, es: `${SITE_URL}/es` },
   },
   openGraph: {
-    title: "Abogados de Accidentes de Camión en Texas",
+    title: "Times Up - Abogadas de Agresión Sexual en Texas para Sobrevivientes",
     description:
-      "¿Te chocó un camión en Texas? Trucking Chicas lucha por las víctimas de accidentes de camión y tráiler. Evaluación gratis. No cobramos si no ganamos.",
+      "¿Sobrevivió una agresión o abuso sexual en Texas? Times Up es un bufete liderado por mujeres que lucha por las sobrevivientes. Revisión de caso gratis y confidencial. No cobramos si no ganamos.",
     url: `${SITE_URL}/es`,
-    locale: "es_MX",
   },
 };
 
+/* Mapa de iconos SVG para los valores fundamentales */
 const valueIcons: Record<string, React.ReactNode> = {
   scale: (
     <svg className="h-9 w-9" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
     </svg>
   ),
-  truck: (
+  shield: (
     <svg className="h-9 w-9" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M3 17h1m16 0h1m-1 0a2 2 0 11-4 0 2 2 0 014 0zM7 17a2 2 0 11-4 0 2 2 0 014 0zm-4 0V7a1 1 0 011-1h10a1 1 0 011 1v10m0-7h4l3 3v4" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
     </svg>
   ),
   grit: (
@@ -58,35 +58,36 @@ export default function HomePageES() {
       <JsonLd data={localBusinessSchema("es")} />
       <JsonLd data={faqSchema(dict.faq.items.slice(0, 7))} />
 
+      {/* Hero */}
       <HeroSection dict={dict} locale="es" showBrand />
 
-      {/* Por Qué los Clientes Confían en Trucking Chicas */}
+      {/* Por qué las sobrevivientes confían en Times Up */}
       <section className="bg-brand-cream py-20">
         <div className="mx-auto max-w-6xl px-4">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-brand-navy md:text-4xl">
-              Por Qué los Clientes Confían en Trucking Chicas
+              Por Qué las Sobrevivientes Confían en Times Up
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-gray-600">
-              Los casos de accidentes de camión son complejos. Los hacemos más claros, más rápidos y menos abrumadores.
+              Dar el paso es difícil. Nosotras hacemos que lo que sigue sea más claro, más seguro y nunca algo que enfrente sola.
             </p>
           </div>
 
-          {/* Trust cards */}
+          {/* Tarjetas de confianza */}
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {[
               {
-                title: "Enfoque en Accidentes de Camión",
-                desc: "Ayudamos a víctimas de choques con 18 ruedas, semi-tráileres y vehículos comerciales, no choques cotidianos.",
+                title: "Práctica Enfocada en Sobrevivientes",
+                desc: "Manejamos exclusivamente casos de agresión y abuso sexual — con la sensibilidad, la privacidad y el enfoque que estos casos exigen.",
                 icon: (
                   <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 17h1m16 0h1m-1 0a2 2 0 11-4 0 2 2 0 014 0zM7 17a2 2 0 11-4 0 2 2 0 014 0zm-4 0V7a1 1 0 011-1h10a1 1 0 011 1v10m0-7h4l3 3v4" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 ),
               },
               {
                 title: "Apoyo Real de Principio a Fin",
-                desc: "Te ayudamos a entender tu caso, los próximos pasos y qué compensación puede estar disponible.",
+                desc: "Primero escuchamos, explicamos cada opción en lenguaje sencillo y dejamos que usted marque el ritmo en cada paso.",
                 icon: (
                   <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
@@ -94,8 +95,8 @@ export default function HomePageES() {
                 ),
               },
               {
-                title: "Mentalidad de Máxima Compensación",
-                desc: "Consideramos facturas médicas, ingresos perdidos, dolor, daños a la propiedad e impacto a largo plazo, no solo los costos obvios.",
+                title: "Rendición de Cuentas Completa",
+                desc: "Perseguimos al agresor y a cada institución negligente — incluyendo costos de terapia, ingresos perdidos, dolor e impacto a largo plazo.",
                 icon: (
                   <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
@@ -116,12 +117,12 @@ export default function HomePageES() {
             ))}
           </div>
 
-          {/* Trust chips */}
+          {/* Sellos de confianza */}
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
             {[
-              "Sin Honorarios Si No Ganamos",
-              "Evaluación Gratis",
-              "Disponible 24/7",
+              "No Cobramos Si No Ganamos",
+              "100% Confidencial",
+              "Disponibles 24/7",
               "Hablamos Español",
             ].map((chip) => (
               <span
@@ -154,12 +155,13 @@ export default function HomePageES() {
                   d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                 />
               </svg>
-              <span className="lg:hidden">Llamar Ahora — Consulta Gratis</span><span className="hidden lg:inline">{dict.cta.callNow}: {PHONE_DISPLAY}</span>
+              <span className="lg:hidden">Llamar Ahora — Confidencial</span><span className="hidden lg:inline">{dict.cta.callNow}: {PHONE_DISPLAY}</span>
             </a>
           </div>
         </div>
       </section>
 
+      {/* Por qué estos casos son diferentes */}
       <section className="py-16">
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-center text-3xl font-bold text-brand-navy md:text-4xl">
@@ -176,24 +178,24 @@ export default function HomePageES() {
         </div>
       </section>
 
-      {/* Types of Truck Accidents */}
+      {/* Casos que manejamos */}
       <section className="bg-brand-navy py-16 text-white">
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-center text-3xl font-bold md:text-4xl">
-            {dict.accidentTypes.title}
+            {dict.caseTypes.title}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-gray-300">
-            {dict.accidentTypes.subtitle}
+            {dict.caseTypes.subtitle}
           </p>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {dict.accidentTypes.items.map((item) => {
+            {dict.caseTypes.items.map((item) => {
               const images: Record<string, string> = {
-                eighteenWheeler: IMAGES.trucks.eighteenWheeler,
-                deliveryTruck: IMAGES.trucks.fedex,
-                oilfieldTanker: IMAGES.trucks.oilTanker,
-                dumpTruck: IMAGES.trucks.dumpTruck,
-                boxTruck: IMAGES.trucks.boxTruck,
-                truckAccident: IMAGES.trucks.allTrucks,
+                sexualAbuse: IMAGES.practice.sexualAbuse,
+                rideshare: IMAGES.practice.rideshare,
+                hotelAssault: IMAGES.practice.hotel,
+                workplaceAssault: IMAGES.practice.workplace,
+                schoolAbuse: IMAGES.practice.school,
+                sexualAssault: IMAGES.practice.allCases,
               };
               return (
                 <Link
@@ -203,7 +205,7 @@ export default function HomePageES() {
                 >
                   <div className="relative h-24 w-28 shrink-0 overflow-hidden rounded-lg">
                     <Image
-                      src={images[item.href] || images.truckAccident}
+                      src={images[item.href] || images.sexualAssault}
                       alt={item.title}
                       fill
                       className="object-cover transition-transform group-hover:scale-110"
@@ -221,29 +223,29 @@ export default function HomePageES() {
         </div>
       </section>
 
-      {/* Core Values — brand pillars */}
+      {/* Valores fundamentales: pilares de la marca */}
       <section className="relative overflow-hidden bg-brand-cream py-14 md:py-16">
-        {/* Subtle tire-tread texture */}
+        {/* Textura de líneas sutil */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-[0.04] [background-image:repeating-linear-gradient(45deg,#121212_0px,#121212_1px,transparent_1px,transparent_18px)]"
+          className="pointer-events-none absolute inset-0 opacity-[0.04] [background-image:repeating-linear-gradient(45deg,#191428_0px,#191428_1px,transparent_1px,transparent_18px)]"
         />
-        {/* Warm red glow behind the header */}
+        {/* Resplandor violeta cálido detrás del encabezado */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-[radial-gradient(60%_100%_at_50%_0%,rgba(229,57,53,0.07),transparent_70%)]"
+          className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-[radial-gradient(60%_100%_at_50%_0%,rgba(109,40,217,0.07),transparent_70%)]"
         />
 
         <div className="relative mx-auto max-w-6xl px-6">
-          {/* Header */}
+          {/* Encabezado */}
           <div className="reveal-up mx-auto max-w-3xl text-center">
             <h2 className="text-4xl font-extrabold leading-[1.05] tracking-tight text-brand-navy sm:text-5xl">
               {dict.home.coreValuesTitle}
             </h2>
-            {/* Dashed highway-lane divider */}
+            {/* Divisor punteado */}
             <div
               aria-hidden
-              className="mx-auto mt-5 h-[3px] w-40 opacity-80 [background-image:repeating-linear-gradient(90deg,#E53935_0px,#E53935_20px,transparent_20px,transparent_32px)]"
+              className="mx-auto mt-5 h-[3px] w-40 opacity-80 [background-image:repeating-linear-gradient(90deg,#6D28D9_0px,#6D28D9_20px,transparent_20px,transparent_32px)]"
             />
             <p className="mt-4 text-xl font-bold text-brand-red sm:text-2xl">
               {dict.home.coreValuesSubtitle}
@@ -253,14 +255,14 @@ export default function HomePageES() {
             </p>
           </div>
 
-          {/* Pillars */}
+          {/* Pilares */}
           <div className="mt-10 grid gap-5 md:mt-12 md:grid-cols-3 md:gap-6">
             {dict.home.coreValues.map((v) => (
               <div
                 key={v.title}
                 className="reveal-up group relative flex flex-col rounded-3xl bg-white p-6 shadow-[0_10px_40px_-12px_rgba(0,0,0,0.15)] ring-1 ring-black/[0.04] transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_28px_60px_-15px_rgba(0,0,0,0.28)] hover:ring-2 hover:ring-brand-red/40 md:p-7"
               >
-                {/* Icon */}
+                {/* Icono */}
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-red/10 text-brand-red transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-red group-hover:text-white">
                   {valueIcons[v.icon] || valueIcons.scale}
                 </div>
@@ -276,30 +278,31 @@ export default function HomePageES() {
         </div>
       </section>
 
+      {/* CTA */}
       <CTASection dict={dict} locale="es" variant="dark" />
 
-      {/* Featured Results: Premium Editorial */}
+      {/* Resultados destacados */}
       <section className="bg-white py-20 md:py-24">
         <div className="mx-auto max-w-5xl px-4">
-          {/* Header */}
+          {/* Encabezado */}
           <div className="text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#C62828]">
               Resultados Destacados
             </p>
             <h2 className="mt-3 text-3xl font-bold text-brand-navy md:text-4xl">
-              Luchando por la Máxima Compensación: Caso por Caso
+              Luchando por la Rendición de Cuentas Completa: Caso por Caso
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-gray-500 md:text-lg">
-              Cada caso es diferente. Pero cuando hay lesiones graves y vehículos comerciales involucrados, luchamos para recuperar el valor total que nuestros clientes merecen.
+              Cada caso es diferente. Pero cuando las instituciones les fallan a las personas que debían proteger, luchamos por toda la justicia que nuestras clientas merecen.
             </p>
           </div>
 
-          {/* Featured case cards */}
+          {/* Tarjetas de casos destacados */}
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {[
-              { amount: "$475,000", label: "Recuperación", title: "Choque con Vehículo de Empresa", detail: "Cliente requirió cirugía de columna" },
-              { amount: "$375,000", label: "Recuperación", title: "Colisión Lateral con 18 Ruedas", detail: "Negligencia de vehículo comercial" },
-              { amount: "Alta Cifra de Seis Dígitos", label: "Acuerdo", title: "Choque de 18 Ruedas (Confidencial)", detail: "Daños severos" },
+              { amount: "Siete Cifras", label: "Acuerdo", title: "Seguridad Negligente en Hotel", detail: "Identidad protegida — demanda como Jane Doe" },
+              { amount: "Siete Cifras", label: "Acuerdo", title: "Agresión por Conductor de Aplicación", detail: "Reclamo de responsabilidad contra la plataforma" },
+              { amount: "Altas Seis Cifras", label: "Acuerdo", title: "Agresión Laboral (Confidencial)", detail: "El empleador ignoró quejas anteriores" },
             ].map((c) => (
               <div
                 key={c.title}
@@ -314,20 +317,20 @@ export default function HomePageES() {
             ))}
           </div>
 
-          {/* Support line */}
+          {/* Línea de apoyo */}
           <p className="mt-10 text-center text-sm font-medium text-gray-600">
-            + Recuperaciones adicionales de seis cifras en casos de 18 ruedas, camiones Mack y vehículos de empresa
+            + Recuperaciones confidenciales adicionales contra hoteles, empleadores, escuelas y dueños de propiedades
           </p>
 
-          {/* Disclaimer */}
+          {/* Aviso */}
           <p className="mt-3 text-center text-xs text-gray-400">
-            Los resultados dependen de los hechos de cada caso. No todos los casos resultan en el mismo desenlace.
+            Los resultados dependen de los hechos de cada caso. No todos los casos tienen el mismo resultado. Los detalles se omiten para proteger la privacidad de las clientas.
           </p>
 
           {/* CTA */}
           <div className="mt-12 text-center">
             <p className="mb-4 text-lg font-medium text-brand-navy">
-              Descubra cuánto podría valer su caso
+              Descubra cómo podría verse la rendición de cuentas en su caso
             </p>
             <a
               href={`tel:+1${PHONE_NUMBER}`}
@@ -336,13 +339,13 @@ export default function HomePageES() {
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              Llame Ahora: {PHONE_DISPLAY}
+              <span className="lg:hidden">Llamar Ahora — Confidencial</span><span className="hidden lg:inline">Llamar Ahora: {PHONE_DISPLAY}</span>
             </a>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonios */}
       <section className="bg-gray-50 py-16">
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-center text-3xl font-bold text-brand-navy md:text-4xl">
@@ -372,6 +375,7 @@ export default function HomePageES() {
         </div>
       </section>
 
+      {/* Lo que puede recuperar */}
       <section className="py-16">
         <div className="mx-auto max-w-3xl px-4">
           <h2 className="text-center text-3xl font-bold text-brand-navy md:text-4xl">
@@ -381,7 +385,11 @@ export default function HomePageES() {
             {dict.home.recoverItems.map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <svg className="mt-1 h-5 w-5 shrink-0 text-brand-coral" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  <path
+                    fillRule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 <span className="text-lg text-gray-700">{item}</span>
               </li>
@@ -390,7 +398,7 @@ export default function HomePageES() {
         </div>
       </section>
 
-      {/* Areas We Serve */}
+      {/* Áreas que servimos */}
       <section className="bg-brand-navy py-16 text-white">
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-center text-3xl font-bold md:text-4xl">
@@ -424,13 +432,13 @@ export default function HomePageES() {
         </div>
       </section>
 
-      {/* Why Choose Trucking Chicas */}
-      {/* Mobile: image visible at top, cards flow below */}
+      {/* Por qué elegir a Times Up */}
+      {/* Móvil: imagen visible arriba, tarjetas debajo */}
       <section className="relative md:hidden">
         <div className="relative h-64 sm:h-80">
           <Image
             src={IMAGES.chooseUs}
-            alt="Por qué elegir Trucking Chicas"
+            alt="Por qué elegir a Times Up"
             fill
             className="object-cover object-top"
             sizes="100vw"
@@ -451,12 +459,12 @@ export default function HomePageES() {
           </div>
         </div>
       </section>
-      {/* Desktop: full image with overlaid cards */}
+      {/* Escritorio: imagen completa con tarjetas superpuestas */}
       <section className="relative hidden md:block">
         <div className="relative min-h-[850px]">
           <Image
             src={IMAGES.chooseUs}
-            alt="Por qué elegir Trucking Chicas"
+            alt="Por qué elegir a Times Up"
             fill
             className="object-cover object-top"
             sizes="100vw"
@@ -478,10 +486,11 @@ export default function HomePageES() {
         </div>
       </section>
 
-      {/* Consultation Form */}
+      {/* Sección del formulario de consulta */}
       <section className="bg-brand-cream py-16">
         <div className="mx-auto max-w-6xl px-4">
           <div className="grid items-start gap-12 md:grid-cols-2">
+            {/* Izquierda: mensaje */}
             <div>
               <h2 className="text-3xl font-bold text-brand-navy md:text-4xl">
                 {dict.home.consultFormTitle}
@@ -510,10 +519,11 @@ export default function HomePageES() {
                   <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  <span className="lg:hidden">Llamar Ahora — Consulta Gratis</span><span className="hidden lg:inline">{dict.cta.callNow}: {PHONE_DISPLAY}</span>
+                  <span className="lg:hidden">Llamar Ahora — Confidencial</span><span className="hidden lg:inline">{dict.cta.callNow}: {PHONE_DISPLAY}</span>
                 </a>
               </div>
             </div>
+            {/* Derecha: formulario */}
             <div className="rounded-xl bg-white p-6 shadow-lg md:p-8">
               <h3 className="mb-6 text-xl font-bold text-brand-navy">{dict.cta.formHeading}</h3>
               <ContactForm dict={dict} locale="es" />
@@ -522,6 +532,7 @@ export default function HomePageES() {
         </div>
       </section>
 
+      {/* Lo que puede hacer ahora mismo */}
       <section className="py-16">
         <div className="mx-auto max-w-3xl px-4">
           <h2 className="text-center text-3xl font-bold text-brand-navy md:text-4xl">
@@ -543,6 +554,7 @@ export default function HomePageES() {
         </div>
       </section>
 
+      {/* Preguntas frecuentes breves */}
       <section className="bg-gray-50 py-16">
         <div className="mx-auto max-w-3xl px-4">
           <h2 className="text-center text-3xl font-bold text-brand-navy md:text-4xl">
@@ -554,12 +566,13 @@ export default function HomePageES() {
         </div>
       </section>
 
-      {/* Trust Badges */}
+      {/* Sellos de confianza */}
       <TrustBadges />
 
+      {/* CTA final */}
       <CTASection dict={dict} locale="es" variant="dark" />
 
-      {/* Case Estimate Modal */}
+      {/* Modal de revisión de caso */}
       <CaseEstimateModal dict={dict} locale="es" />
     </PageShell>
   );

@@ -11,27 +11,33 @@ import { localBusinessSchema, breadcrumbSchema } from "@/lib/schema";
 import { IMAGES } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Abogado de Accidentes de Camión en Texas",
+  title: "Abogada de Agresión Sexual en Texas",
   description:
-    "¿Lesionado en un accidente de camión en Texas? Nuestros abogados altamente experimentados luchan por la máxima compensación. Evaluación gratis. No cobramos si no ganamos.",
+    "¿Sobrevivió una agresión sexual en Texas? Nuestro bufete liderado por mujeres busca justicia civil contra agresores e instituciones negligentes. Revisión de caso gratis y confidencial.",
   alternates: {
-    canonical: `${SITE_URL}/es/abogado-accidentes-de-camion`,
+    canonical: `${SITE_URL}/es/abogada-agresion-sexual`,
     languages: {
-      en: `${SITE_URL}/truck-accident-lawyer`,
-      es: `${SITE_URL}/es/abogado-accidentes-de-camion`,
+      en: `${SITE_URL}/sexual-assault-lawyer`,
+      es: `${SITE_URL}/es/abogada-agresion-sexual`,
     },
+  },
+  openGraph: {
+    title: "Abogada de Agresión Sexual en Texas",
+    description:
+      "¿Sobrevivió una agresión sexual en Texas? Nuestro bufete liderado por mujeres busca justicia civil contra agresores e instituciones negligentes. Revisión de caso gratis y confidencial.",
+    url: `${SITE_URL}/es/abogada-agresion-sexual`,
   },
 };
 
-export default function TruckAccidentPageES() {
+export default function SexualAssaultPageES() {
   const dict = getDictionary("es");
-  const d = dict.truckAccident;
+  const d = dict.sexualAssault;
   const routes = ROUTES.es;
 
   return (
     <PageShell dict={dict} locale="es">
       <JsonLd data={localBusinessSchema("es")} />
-      <JsonLd data={breadcrumbSchema([{ name: "Inicio", url: "/es" }, { name: d.title, url: "/es/abogado-accidentes-de-camion" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Inicio", url: "/es" }, { name: d.title, url: "/es/abogada-agresion-sexual" }])} />
 
       <HeroSection dict={dict} locale="es" headline={d.heroHeadline} subhead={d.heroSubhead} />
 
@@ -40,8 +46,8 @@ export default function TruckAccidentPageES() {
           <h2 className="text-3xl font-bold text-brand-navy">{d.causesTitle}</h2>
           <div className="mt-6 overflow-hidden rounded-xl">
             <Image
-              src={IMAGES.trucks.allTrucks}
-              alt="Camiones comerciales"
+              src={IMAGES.practice.allCases}
+              alt="Balanza de la justicia: reclamos civiles para sobrevivientes"
               width={800}
               height={450}
               className="h-auto w-full rounded-xl"
@@ -109,13 +115,14 @@ export default function TruckAccidentPageES() {
         </div>
       </section>
 
+      {/* Enlaces internos */}
       <section className="py-10">
         <div className="mx-auto max-w-3xl px-4">
           <h2 className="text-xl font-bold text-brand-navy">Páginas Relacionadas</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href={routes.eighteenWheeler} className="text-brand-rose underline hover:text-brand-rose-dark">{dict.nav.eighteenWheeler}</Link>
-            <Link href={routes.faq} className="text-brand-rose underline hover:text-brand-rose-dark">{dict.nav.faq}</Link>
-            <Link href={routes.areas} className="text-brand-rose underline hover:text-brand-rose-dark">{dict.nav.areas}</Link>
+            <Link href={routes.sexualAbuse} className="text-brand-rose underline hover:text-brand-rose-dark">Abogada de Abuso Sexual</Link>
+            <Link href={routes.faq} className="text-brand-rose underline hover:text-brand-rose-dark">Preguntas Frecuentes</Link>
+            <Link href={routes.areas} className="text-brand-rose underline hover:text-brand-rose-dark">Áreas que Servimos</Link>
           </div>
         </div>
       </section>
